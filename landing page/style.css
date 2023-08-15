@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+h1{
+    color:#3cbff7;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    color:#3cbff7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.landing-content {
+    text-align: center;
+}
+
+.landing-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.landing-content a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3cbff7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
