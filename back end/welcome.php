@@ -1,30 +1,27 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_email'])) {
-    header('Location: login.php'); // Redirect to login page if user is not logged in
+if (!isset($_SESSION["user_id"])) {
+    header("Location: login.php");
+    exit();
 }
 
-require 'db_config.php';
-
-// Retrieve user data from the database based on email
-$stmt = $db->prepare("SELECT * FROM users WHERE email = ?");
-$stmt->execute([$_SESSION['user_email']]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+// Fetch user data based on session user_id
+// (You need to handle the database connection and query)
+$user = []; // Fetch user data from the database
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <!-- Head content here -->
 </head>
 <body>
-    <h2>Welcome, <?php echo $user['fname'] . " " . $user['lname']; ?></h2>
-    <p>Email: <?php echo $user['email']; ?></p>
-    <p>Mobile: <?php echo $user['mobile']; ?></p>
-    <a href="logout.php">Log Out</a>
+    <h1>Welcome</h1>
+    <p>Welcome, <?php echo $user["first_name"] . " " . $user["last_name"]; ?></p>
+    <p>Email: <?php echo $user["email"]; ?></p>
+    <p>Mobile: <?php echo $user["mobile"]; ?></p>
+    <!-- Other welcome page content -->
 </body>
 </html>

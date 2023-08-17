@@ -18,7 +18,7 @@ body {
   max-width: 450px;
 }
 
-.login-form input {
+#login-form input {
   width: 95%;
   padding: 10px;
   margin-bottom: 10px;
@@ -26,7 +26,7 @@ body {
   border-radius: 5px;
 }
 
-.login-form button {
+#login-form button {
   width: 100%;
   padding: 10px;
   background-color: #3cbff7;

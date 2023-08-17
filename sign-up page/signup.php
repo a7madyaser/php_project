@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response['message'] = "Data stored successfully";
         // Redirect to index.html
         echo "<script>window.location.href='index.html'</script>"; 
-        exit; // Ensure script execution stops after redirection
+        exit; 
     } else {
         $response['message'] = "Error: " . $sql . "<br>" . $conn->error;
     }

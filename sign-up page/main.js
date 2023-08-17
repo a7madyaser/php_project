@@ -8,9 +8,7 @@ function validateForm() {
     const lname = document.getElementById("lname").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
-    // const day = parseInt(document.getElementById("day").value);
-    // const month = parseInt(document.getElementById("month").value);
-    // const year = parseInt(document.getElementById("year").value);
+    const data = parseInt(document.getElementById("data").value);
     const ageError = document.getElementById("ageError");
 
     if (!emailPattern.test(email)) {
@@ -48,14 +46,20 @@ function validateForm() {
         headers:{
             "Content-Type":"Application/json",
         },
-        body:JSON.stringify({password:password,email:email}),
+        body:JSON.stringify({password:password,email:email,fname:fname,lname:lname,password:password,confirmPassword:confirmPassword,data:data }),
     })
     .then(response=>response.json())
     .then(data=>{
         alert(data.message);
-        document.getElementById("name").value="";
+
         document.getElementById("email").value="";
-    
+        document.getElementById("mobile").value="";
+        document.getElementById("fname").value="";
+        document.getElementById("lname").value="";
+        document.getElementById("password").value="";
+        document.getElementById("confirmPassword").value="";
+        document.getElementById("data").value="";
+        
     })
     .catch(error=>{
         console.error("Error:",error);
